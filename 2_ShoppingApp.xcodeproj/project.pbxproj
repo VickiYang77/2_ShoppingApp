@@ -62,16 +62,16 @@
 		99FC965E28C64A3B00DE4321 /* 2_ShoppingApp */ = {
 			isa = PBXGroup;
 			children = (
-				99FC965F28C64A3B00DE4321 /* AppDelegate.swift */,
-				99FC966128C64A3B00DE4321 /* SceneDelegate.swift */,
 				99FC966328C64A3B00DE4321 /* ViewController.swift */,
+				9948F7222912AFDA0004389F /* ViewModel.swift */,
+				9948F72029116EA80004389F /* ProductCell.swift */,
+				9948F71E29100DB90004389F /* ProductCell.xib */,
 				99FC966528C64A3B00DE4321 /* Main.storyboard */,
 				99FC966828C64A3D00DE4321 /* Assets.xcassets */,
+				99FC965F28C64A3B00DE4321 /* AppDelegate.swift */,
+				99FC966128C64A3B00DE4321 /* SceneDelegate.swift */,
 				99FC966A28C64A3D00DE4321 /* LaunchScreen.storyboard */,
 				99FC966D28C64A3D00DE4321 /* Info.plist */,
-				9948F71E29100DB90004389F /* ProductCell.xib */,
-				9948F72029116EA80004389F /* ProductCell.swift */,
-				9948F7222912AFDA0004389F /* ViewModel.swift */,
 			);
 			path = 2_ShoppingApp;
 			sourceTree = "<group>";
