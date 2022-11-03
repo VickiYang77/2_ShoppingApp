@@ -29,9 +29,6 @@ class ViewController: UIViewController {
         tableView.reloadData()
     }
     
-    @IBAction func CartBtnClick(_ sender: Any) {
-    }
-    
     func binding() {
         viewModel.$total
             .receive(on: RunLoop.main)

@@ -3,9 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -63,33 +61,15 @@
                                     <constraint firstAttribute="height" constant="65" id="xWx-Py-fsj"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cS7-qM-nxg" userLabel="CartButton">
-                                <rect key="frame" x="344" y="69" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="cS7-qM-nxg" secondAttribute="height" multiplier="1:1" id="0rO-Ef-GhN"/>
-                                    <constraint firstAttribute="width" constant="40" id="cm6-IG-f5h"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="tintColor" systemColor="systemPinkColor"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal">
-                                    <imageReference key="image" image="cart" catalog="system" symbolScale="large"/>
-                                </state>
-                                <connections>
-                                    <action selector="CartBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9QB-J1-iq9"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.76078431372549016" green="0.9137254901960784" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="GNw-CF-02P" firstAttribute="top" secondItem="adv-VB-N9E" secondAttribute="bottom" constant="5" id="0Mw-gE-IPH"/>
-                            <constraint firstItem="cS7-qM-nxg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="3fj-Za-hwh"/>
                             <constraint firstItem="GNw-CF-02P" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5ms-cs-Mpl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lWj-xp-O2J" secondAttribute="trailing" constant="20" id="Bu7-3n-LQ6"/>
                             <constraint firstItem="GNw-CF-02P" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="IOw-p5-Syl"/>
                             <constraint firstAttribute="trailing" secondItem="GNw-CF-02P" secondAttribute="trailing" id="Im3-kf-h2N"/>
-                            <constraint firstItem="cS7-qM-nxg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-30" id="LRT-fA-YOY"/>
                             <constraint firstItem="adv-VB-N9E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PFC-AA-HoZ"/>
                             <constraint firstItem="adv-VB-N9E" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="35" id="Sb9-bs-Xbr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lWj-xp-O2J" secondAttribute="bottom" constant="5" id="Zb8-uh-td8"/>
@@ -110,10 +90,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cart" catalog="system" width="128" height="102"/>
         <image name="header" width="1280" height="544"/>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>
