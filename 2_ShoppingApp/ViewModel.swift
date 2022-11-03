@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 enum typeEnum: String, CaseIterable {
     case 領結型變聲器
@@ -43,7 +44,25 @@ enum typeEnum: String, CaseIterable {
 }
 
 class ViewModel {
-    var cartCar: [typeEnum:Int] = [:]
+    private var cancellableSet: Set<AnyCancellable> = []
+    @Published var cart: [typeEnum:Int] = [:]
+    @Published var total: Int = 0
+    
+    init() {
+        binding()
+    }
+    
+    private func binding() {
+        $cart
+            .sink() { [weak self] items in
+                var total = 0
+                for (type, value) in items {
+                    total += value * type.price
+                }
+                self?.total = total
+                
+            }.store(in: &cancellableSet)
+    }
     
     func getTypeList() -> [typeEnum] {
         return typeEnum.allCases

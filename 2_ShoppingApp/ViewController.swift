@@ -6,14 +6,18 @@
 //
 
 import UIKit
+import Combine
 
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var priceLabel: UILabel!
     var viewModel = ViewModel()
+    private var cancellableSet: Set<AnyCancellable> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        binding()
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(ProductCell.nib(), forCellReuseIdentifier: ProductCell.identifier)
@@ -21,12 +25,20 @@ class ViewController: UIViewController {
     }
     
     @IBAction func clearBtnClick(_ sender: Any) {
-        priceLabel.text = "0"
-        viewModel.cartCar = [:]
+        viewModel.cart = [:]
         tableView.reloadData()
     }
     
     @IBAction func CartBtnClick(_ sender: Any) {
+    }
+    
+    func binding() {
+        viewModel.$total
+            .receive(on: RunLoop.main)
+            .sink() { [weak self] in
+                self?.priceLabel.text = "\($0)"
+            }
+            .store(in: &cancellableSet)
     }
     
 }
@@ -37,9 +49,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let itemData = viewModel.getTypeList()[indexPath.row]
-        let qty = viewModel.cartCar[itemData] ?? 0
         let cell = tableView.dequeueReusableCell(withIdentifier: ProductCell.identifier) as! ProductCell
+        let itemData = viewModel.getTypeList()[indexPath.row]
+        let qty = viewModel.cart[itemData] ?? 0
         cell.delegate = self
         cell.setup(type: itemData, qty: qty)
 
@@ -49,12 +61,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ViewController: ProductCellDelegate {
     func stepperClick(type:typeEnum, value: Int) {
-        viewModel.cartCar[type] = value
-        var total = 0
-        for (type, value) in viewModel.cartCar {
-            total += value * type.price
-        }
-        priceLabel.text = "\(total)"
+        viewModel.cart[type] = value
     }
  }
  
