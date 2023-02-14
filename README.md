@@ -16,7 +16,7 @@
 
 - 基本MVVM架構區分檔案
 
-![image](https://user-images.githubusercontent.com/25075180/218511845-0ab7f9ce-edf0-4053-84c3-fddcf44cd368.png)
+  ![image](https://user-images.githubusercontent.com/25075180/218798236-a31eda17-f107-4d86-966d-4e9b41f81209.png)
 
 - 建立 Enum
   - 需遵從 Protocol CaseIterable，才可使用 typeEnum.allCases 方法
